@@ -1,0 +1,91 @@
+P R I M E R A  P A R T E
+
+
+1. Buscar la mejor señal de Wi-Fi en una habitación
+
+- Problema: Quieres la mayor intensidad de señal de Wi-Fi en tu casa.
+- Hill Climbing:
+
+Caminas por la habitación con tu celular mirando la barra de señal.
+
+Te mueves hacia donde la señal mejora.
+
+Cuando ya no mejora al moverte, te quedas ahí.
+
+* Función objetivo: Intensidad de señal (más barras de Wi-Fi).
+
+Máximo global: El punto exacto en la habitación donde la señal es más fuerte (ej. justo al lado del router).
+
+Estado inicial: Una ubicación inicial cualquiera dentro de la habitación (ej. sentado en el sillón o en una esquina).
+
+* Matemáticamente, se puede representar como una coordenada inicial (x,y) en la habitación.
+
+
+
+=================================================================================================================================
+
+2. Ajustar la temperatura del aire acondicionado
+
+- Problema: Quieres que la temperatura de tu sala sea la más cómoda posible (ni muy frío, ni muy caliente).
+- Hill Climbing:
+
+Subes o bajas medio grado.
+
+Si mejora tu comodidad, sigues en esa dirección.
+
+Cuando ya no mejora, paras de ajustar.
+
+* Función objetivo: Nivel de comodidad.
+
+Máximo global: La temperatura que da el mayor nivel de comodidad (ej. 23 °C).
+
+Estado inicial: La temperatura en la que está el aire acondicionado al inicio (ej. 27 °C porque alguien lo dejó ahí).
+
+* Se representa como un número inicial dentro del rango de temperaturas posibles (por ejemplo, entre 16 °C y 30 °C).
+
+
+
+=================================================================================================================================
+
+S E G U N D A  P A R T E
+
+
+Ejercicio 1: Maximizar una función cuadrática
+
+        Problema: Encontrar el máximo de la función f(x) = -(x-3)**3 + 9
+
+        Función objetivo:
+
+        def f(x):
+            return -(x-3)**2 + 93
+
+        Explicación: Se empieza en un valor aleatorio, y se mueve hacia vecinos con mayor valor de la función hasta encontrar el máximo.Se debe garantizar que el vecino siempre se mantenga dentro del intervalo [0, 6]. Esto se conoce como restricción de dominio o clipping.
+
+
+Ejercicio 2: Minimizar la distancia a un punto
+
+        Problema: Encontrar el punto más cercano a 7 en una recta.
+
+        Función objetivo:
+
+        def f(x):
+            return -abs(x - 7)
+
+        Explicación: Hill Climbing maximiza la función negativa de la distancia, lo que equivale a minimizar la distancia.
+
+
+Ejercicio 3: Optimización de función con múltiples picos
+
+        Problema: Maximizar f(x)=xsin(4x)+1.1x en [0,10].
+
+        Función objetivo:
+
+        import math
+        def f(x):
+            return x * math.sin(4*x) + 1.1 * x
+
+        Explicación: Función con varios picos locales; Hill Climbing puede quedarse en máximos locales dependiendo del punto inicial.
+
+
+Tarea
+Proponer una aplicacion de hill clambing proponer su funcion objectivo
